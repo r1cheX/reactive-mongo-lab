@@ -5,19 +5,19 @@ Current level: **1 — CRUD reactivo**
 ## Level 1 — CRUD reactivo
 | Exercise | Status | Started | Done |
 |---|---|---|---|
-| POST /students | pending | 2026-09-06 | |
-| GET /students | | | |
-| GET /students/{id} | | | |
-| PUT /students/{id} | | | |
-| DELETE /students/{id} | | | |
+| POST /students | done | 2026-09-06 | 2026-09-06 |
+| GET /students | done | 2026-09-06 | 2026-09-06 |
+| GET /students/{id} | done | 2026-09-06 | 2026-09-06 |
+| PUT /students/{id} | done | 2026-09-06 | 2026-09-06 |
+| DELETE /students/{id} | done | 2026-09-06 | 2026-09-06 |
 
 ## Level 2 — Queries
 | Exercise | Status | Started | Done |
 |---|---|---|---|
-| GET /students/active | | | |
-| GET /students/older-than/{age} | | | |
-| GET /students/skill/{skill} | | | |
-| combined filters (Repository vs Mongo-side) | | | |
+| GET /students/active | done | 2026-09-06 | 2026-09-06 |
+| GET /students/older-than/{age} | done | 2026-09-06 | 2026-09-06 |
+| GET /students/skill/{skill} | done | 2026-09-06 | 2026-09-06 |
+| combined filters (Repository vs Mongo-side) | pending | 2026-09-06 | |
 
 ## Level 3 — Reactor operators
 | Exercise | Status | Started | Done |

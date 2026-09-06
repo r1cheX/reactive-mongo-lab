@@ -1,8 +1,29 @@
 package com.learning.reactive_mongo_lab.service;
 
-import org.springframework.stereotype.Service;
+import com.learning.reactive_mongo_lab.dto.StudentDto;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
-@Service
-public class StudentService {
+import java.util.List;
 
+public interface StudentService {
+    Mono<StudentDto> save(StudentDto student);
+
+    Flux<StudentDto> getStudents();
+
+    Mono<StudentDto> getStudent(String id);
+
+    Mono<StudentDto> updateStudent(String id, StudentDto student);
+
+    Mono<Boolean> deleteStudent(String id);
+
+    Flux<StudentDto> getActiveStudents();
+
+    Flux<StudentDto> getStudentsOlderThan(int age);
+
+    Flux<StudentDto> getStudentsBySkill(String skill);
+
+    Flux<StudentDto> getStudentsBySkills(List<String> skills);
+
+    Flux<StudentDto> searchStudents(Boolean active, Integer olderThan, String skill);
 }

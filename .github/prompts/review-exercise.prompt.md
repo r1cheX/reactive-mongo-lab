@@ -1,9 +1,9 @@
 ---
-name: review-exercise
-description: Review current code against the pending exercise in reactive-mongo-lab
+name: review-exercises
+description: Review current code against the pending exercises in reactive-mongo-lab
 ---
 
-Find the pending exercise in `LAB_PROGRESS.md` (status `pending`).
+Find the pending exercises in `LAB_PROGRESS.md` (status `pending`).
 
 Review the current code changes against that exercise's goal:
 - Give a brief pass/fail verdict.
