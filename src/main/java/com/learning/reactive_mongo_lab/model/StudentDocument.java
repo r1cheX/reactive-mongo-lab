@@ -12,7 +12,7 @@ import java.util.List;
 @Builder
 @Getter
 @Setter
-public class Student {
+public class StudentDocument {
     @Id
     private String id;
     private String name;
@@ -22,7 +22,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "StudentDocument{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", age=" + age +

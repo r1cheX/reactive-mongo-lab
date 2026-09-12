@@ -1,5 +1,6 @@
 package com.learning.reactive_mongo_lab.service;
 
+import com.learning.reactive_mongo_lab.dto.SearchFilterDto;
 import com.learning.reactive_mongo_lab.dto.StudentDto;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -25,5 +26,5 @@ public interface StudentService {
 
     Flux<StudentDto> getStudentsBySkills(List<String> skills);
 
-    Flux<StudentDto> searchStudents(Boolean active, Integer olderThan, String skill);
+    Flux<StudentDto> searchStudents(SearchFilterDto searchFilterDto);
 }

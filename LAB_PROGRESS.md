@@ -17,7 +17,7 @@ Current level: **1 — CRUD reactivo**
 | GET /students/active | done | 2026-09-06 | 2026-09-06 |
 | GET /students/older-than/{age} | done | 2026-09-06 | 2026-09-06 |
 | GET /students/skill/{skill} | done | 2026-09-06 | 2026-09-06 |
-| combined filters (Repository vs Mongo-side) | pending | 2026-09-06 | |
+| combined filters (Repository vs Mongo-side) | done | 2026-09-12 | 2026-09-12 |
 
 ## Level 3 — Reactor operators
 | Exercise | Status | Started | Done |

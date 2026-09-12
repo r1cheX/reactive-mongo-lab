@@ -1,7 +1,8 @@
 package com.learning.reactive_mongo_lab.service;
 
+import com.learning.reactive_mongo_lab.dto.SearchFilterDto;
 import com.learning.reactive_mongo_lab.dto.StudentDto;
-import com.learning.reactive_mongo_lab.model.Student;
+import com.learning.reactive_mongo_lab.model.StudentDocument;
 import com.learning.reactive_mongo_lab.repository.StudentRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,9 +21,9 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Mono<StudentDto> save(StudentDto student) {
-        Student entity = Student.builder().name(student.getName()).age(student.getAge()).active(student.isActive()).skills(student.getSkills()).build();
+        StudentDocument entity = StudentDocument.builder().name(student.getName()).age(student.getAge()).active(student.isActive()).skills(student.getSkills()).build();
         return studentRepository.save(entity)
-                        .doOnNext(savedStudent -> log.info("Saved student: {}", savedStudent))
+                        .doOnNext(savedStudentDocument -> log.info("Saved student: {}", savedStudentDocument))
                         .map(this::mapTo);
     }
 
@@ -41,12 +42,12 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Mono<StudentDto> updateStudent(String id, StudentDto student) {
         return studentRepository.findById(id)
-                .flatMap(existingStudent -> {
-                    existingStudent.setName(student.getName());
-                    existingStudent.setAge(student.getAge());
-                    existingStudent.setActive(student.isActive());
-                    existingStudent.setSkills(student.getSkills());
-                    return studentRepository.save(existingStudent);
+                .flatMap(existingStudentDocument -> {
+                    existingStudentDocument.setName(student.getName());
+                    existingStudentDocument.setAge(student.getAge());
+                    existingStudentDocument.setActive(student.isActive());
+                    existingStudentDocument.setSkills(student.getSkills());
+                    return studentRepository.save(existingStudentDocument);
                 })
                 .map(this::mapTo);
     }
@@ -85,16 +86,16 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Flux<StudentDto> searchStudents(Boolean active, Integer olderThan, String skill) {
-        return studentRepository.findByActiveAndAgeGreaterThanAndSkillsContains(active, olderThan, skill).map(this::mapTo);
+    public Flux<StudentDto> searchStudents(SearchFilterDto searchFilterDto) {
+        return studentRepository.findBySearchFilter(searchFilterDto).map(this::mapTo);
     }
 
-    private StudentDto mapTo(Student savedStudent) {
+    private StudentDto mapTo(StudentDocument savedStudentDocument) {
         return StudentDto.builder()
-                .name(savedStudent.getName())
-                .age(savedStudent.getAge())
-                .active(savedStudent.isActive())
-                .skills(savedStudent.getSkills())
+                .name(savedStudentDocument.getName())
+                .age(savedStudentDocument.getAge())
+                .active(savedStudentDocument.isActive())
+                .skills(savedStudentDocument.getSkills())
                 .build();
     }
 }

@@ -1,6 +1,5 @@
 spring:
   application:
     name: reactive-mongo-lab
-
   mongodb:
     uri: mongodb://localhost:27017/reactive_lab

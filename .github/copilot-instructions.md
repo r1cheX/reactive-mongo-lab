@@ -11,6 +11,7 @@
 - Answer in English.
 - Be concise by default: code + at most a 1-line rationale. No theory dumps unless explicitly asked.
 - Never scaffold the whole project at once. This is a learning lab — one exercise at a time.
+- Don't execute any commands or run tests.
 
 ## Exercise workflow
 - This repo is worked through progressively via `LAB_PROGRESS.md` (levels 1-5, see file for curriculum).
