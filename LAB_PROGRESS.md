@@ -35,10 +35,15 @@ Current level: **1 — CRUD reactivo**
 | projection | done | 2026-09-12 | 2026-09-12 |
 | minimal aggregation | done | 2026-09-12 | 2026-09-12 |
 
-## Level 5 — Performance + threads
+## Level 5 — MongoDB Query Performance
+
 | Exercise | Status | Started | Done |
 |---|---|---|---|
-| query without index + explain | | | |
-| create index + re-explain | | | |
-| k6 load test (10/100/500 vus) | | | |
-| non-blocking vs Thread.sleep endpoint comparison | | | |
+| seed synthetic dataset (100k–500k customers) |  |  |  |
+| query without index + `explain()` |  |  |  |
+| inspect `COLLSCAN` vs `IXSCAN`, `docsExamined` vs `nReturned` |  |  |  |
+| create simple/compound index + re-run `explain()` |  |  |  |
+| pagination + sort on dynamic query |  |  |  |
+| regex search vs indexed exact/prefix search |  |  |  |
+| k6 load test: 10 / 100 / 500 VUs |  |  |  |
+| compare blocking `Thread.sleep` vs non-blocking endpoint |  |  |  |
