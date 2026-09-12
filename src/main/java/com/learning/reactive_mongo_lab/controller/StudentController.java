@@ -1,7 +1,9 @@
 package com.learning.reactive_mongo_lab.controller;
 
 import com.learning.reactive_mongo_lab.dto.SearchFilterDto;
+import com.learning.reactive_mongo_lab.dto.SkillCountDto;
 import com.learning.reactive_mongo_lab.dto.StudentDto;
+import com.learning.reactive_mongo_lab.dto.StudentProjectionDto;
 import com.learning.reactive_mongo_lab.service.StudentService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -12,6 +14,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/v1/students")
@@ -53,6 +56,25 @@ public class StudentController {
     @GetMapping("/search")
     public Flux<StudentDto> searchStudents(@ModelAttribute SearchFilterDto searchFilterDto) {
         return studentService.searchStudents(searchFilterDto);
+    }
+
+    @PatchMapping("/{id}")
+    public Mono<ResponseEntity<StudentDto>> partialUpdateStudent(
+            @PathVariable String id,
+            @RequestBody Map<String, Object> updates) {
+        return studentService.partialUpdateStudent(id, updates)
+                .map(ResponseEntity::ok)
+                .defaultIfEmpty(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/projection")
+    public Flux<StudentProjectionDto> getStudentProjection() {
+        return studentService.getStudentProjection();
+    }
+
+    @GetMapping("/skill-summary")
+    public Flux<SkillCountDto> getSkillSummary() {
+        return studentService.getSkillSummary();
     }
 
     @GetMapping("/{id}")

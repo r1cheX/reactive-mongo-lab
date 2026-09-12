@@ -22,18 +22,18 @@ Current level: **1 — CRUD reactivo**
 ## Level 3 — Reactor operators
 | Exercise | Status | Started | Done |
 |---|---|---|---|
-| map vs flatMap case | | | |
-| switchIfEmpty case | | | |
-| onErrorResume case | | | |
-| zip case | | | |
+| map vs flatMap case | standby | | |
+| switchIfEmpty case | standby | | |
+| onErrorResume case | standby | | |
+| zip case | standby | | |
 
 ## Level 4 — Reactive Mongo avanzado
 | Exercise | Status | Started | Done |
 |---|---|---|---|
-| dynamic criteria query (MongoTemplate) | | | |
-| partial update (MongoTemplate) | | | |
-| projection | | | |
-| minimal aggregation | | | |
+| dynamic criteria query (MongoTemplate) | done | 2026-09-12 | 2026-09-12 |
+| partial update (MongoTemplate) | done | 2026-09-12 | 2026-09-12 |
+| projection | done | 2026-09-12 | 2026-09-12 |
+| minimal aggregation | done | 2026-09-12 | 2026-09-12 |
 
 ## Level 5 — Performance + threads
 | Exercise | Status | Started | Done |
